@@ -17,9 +17,8 @@
   <link rel="apple-touch-icon" href="icon.png">
 
   <!-- Import stylesheets -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&display=swap">
+  <link rel="preload" href="fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/main.css">
 
   <!-- Import the client-side JavaScript -->
@@ -43,11 +42,12 @@
   <link rel="canonical" href="https://manualplay.com/">
 
   <!-- Define theme color -->
-  <meta name="theme-color" content="#fff3dc">
+  <meta name="theme-color" content="#fff3dc" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#171c25" media="(prefers-color-scheme: dark)">
 </head>
 
-<body>
-  <nav class="sticky top-0 z-10 border-b border-amber-900/10 bg-cream/85 backdrop-blur-md" aria-label="Main">
+<body class="bg-paper text-ink">
+  <nav class="sticky top-0 z-10 border-b border-line bg-cream/85 backdrop-blur-md" aria-label="Main">
     <div class="mx-auto flex h-14 max-w-5xl items-center justify-between gap-4 px-6">
       <a href="#" class="flex items-center gap-2.5">
         <img src="images/app-icon.png" width="28" height="28" alt="" class="size-7 rounded-[7px]">
@@ -55,11 +55,11 @@
       </a>
 
       <div class="flex items-center gap-5 text-sm font-medium">
-        <a href="#features" class="hidden text-neutral-700 hover:text-black sm:inline">Features</a>
-        <a href="#why" class="hidden text-neutral-700 hover:text-black sm:inline">Why</a>
+        <a href="#features" class="hidden text-ink/75 hover:text-ink sm:inline">Features</a>
+        <a href="#why" class="hidden text-ink/75 hover:text-ink sm:inline">Why</a>
         <!-- FLAG: Replace href with the press kit link -->
-        <a href="#" class="hidden text-neutral-700 hover:text-black sm:inline">Press Kit</a>
-        <a href="https://testflight.apple.com/join/f4y22UjJ" class="rounded-full bg-black/80 px-4 py-2.5 text-white transition [text-box:trim-both_cap_alphabetic] hover:bg-neutral-800">Download Beta</a>
+        <a href="#" class="hidden text-ink/75 hover:text-ink sm:inline">Press Kit</a>
+        <a href="https://testflight.apple.com/join/f4y22UjJ" class="rounded-full bg-black/80 px-4 py-2.5 text-white transition [text-box:trim-both_cap_alphabetic] hover:bg-neutral-800 dark:bg-ink dark:text-paper dark:hover:bg-ink/85">Download Beta</a>
       </div>
     </div>
   </nav>
@@ -69,7 +69,7 @@
       type="button"
       id="spin-disc"
       aria-label="Spin the record"
-      class="size-[180px] cursor-pointer overflow-hidden rounded-[40px] bg-[#f5c518] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-black"
+      class="size-[180px] cursor-pointer overflow-hidden rounded-[40px] bg-[#f5c518] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
     >
       <img
         src="images/app-icon.png"
@@ -83,12 +83,12 @@
     
     <div class="text-center space-y-2">
       <h1 class="font-display text-4xl font-bold uppercase [font-stretch:75%]">Manual Play</h1>
-      <h2 class="font-light text-xl">Human-powered music discovery</h2>
+      <p class="font-light text-xl">Human-powered music discovery</p>
     </div>
     
     <a
       href="https://testflight.apple.com/join/f4y22UjJ"
-      class="inline-flex border-3 border-black/25 items-center gap-2.5 rounded-xl bg-black/70 py-3 pr-5 pl-3 text-white transition hover:bg-neutral-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+      class="inline-flex border-3 border-black/25 items-center gap-2.5 rounded-xl bg-black/70 py-3 pr-5 pl-3 text-white transition hover:bg-neutral-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink dark:border-white/20 dark:bg-black dark:hover:bg-neutral-900"
     >
       <svg class="size-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <path d="M12 3v12m0 0-5-5m5 5 5-5M5 20h14"/>
@@ -105,7 +105,7 @@
       <p class="text-2xl leading-snug font-light text-balance sm:text-3xl">
         Manual Play makes it easy to discover great music from the writers, blogs, and magazines you already love.
       </p>
-      <p class="mt-6 text-lg text-pretty text-neutral-600">
+      <p class="mt-6 text-lg text-pretty text-muted">
         Subscribe to the people whose taste you trust. Manual Play reads what they write, finds the records they’re writing about, and puts them all in one place, ready to play.
       </p>
     </section>
@@ -121,7 +121,7 @@
             </svg>
           </div>
           <h3 class="mt-4 text-lg font-semibold">Follow writers you trust</h3>
-          <p class="mt-2 text-neutral-600">Subscribe to the music writers, blogs, and magazines you already love, or pick from a list of suggested sources.</p>
+          <p class="mt-2 text-muted">Subscribe to the music writers, blogs, and magazines you already love, or pick from a list of suggested sources.</p>
         </li>
 
         <li>
@@ -131,7 +131,7 @@
             </svg>
           </div>
           <h3 class="mt-4 text-lg font-semibold">Releases, found for you</h3>
-          <p class="mt-2 text-neutral-600">Manual Play reads their feeds and magically detects the releases they write about.</p>
+          <p class="mt-2 text-muted">Manual Play reads their feeds and magically detects the releases they write about.</p>
         </li>
 
         <li>
@@ -141,7 +141,7 @@
             </svg>
           </div>
           <h3 class="mt-4 text-lg font-semibold">Play with Apple Music</h3>
-          <p class="mt-2 text-neutral-600">Play and star releases right in the app. Use another service? Open In takes you straight to each release there.</p>
+          <p class="mt-2 text-muted">Play and star releases right in the app. Use another service? Open In takes you straight to each release there.</p>
         </li>
 
         <li>
@@ -151,7 +151,7 @@
             </svg>
           </div>
           <h3 class="mt-4 text-lg font-semibold">Explore credits, follow rabbit holes</h3>
-          <p class="mt-2 text-neutral-600">See who played, wrote, and produced each release, then jump to the other records they’re credited on.</p>
+          <p class="mt-2 text-muted">See who played, wrote, and produced each release, then jump to the other records they’re credited on.</p>
         </li>
 
         <li>
@@ -161,7 +161,7 @@
             </svg>
           </div>
           <h3 class="mt-4 text-lg font-semibold">Keep it simple, stupid</h3>
-          <p class="mt-2 text-neutral-600">I’m absolutely tired of subscriptions. I’m tired of likes. I’m tired of “tailored” mixes. Manual Play is just a list of music, drawn from the writers you choose.</p>
+          <p class="mt-2 text-muted">I’m absolutely tired of subscriptions. I’m tired of likes. I’m tired of “tailored” mixes. Manual Play is just a list of music, drawn from the writers you choose.</p>
         </li>
 
         <li>
@@ -171,17 +171,17 @@
             </svg>
           </div>
           <h3 class="mt-4 text-lg font-semibold">Everywhere you listen</h3>
-          <p class="mt-2 text-neutral-600">On iPhone, Mac, Apple Watch, and CarPlay. Your sources and listening history sync through iCloud, so you can pick up where you left off.</p>
+          <p class="mt-2 text-muted">On iPhone, Mac, Apple Watch, and CarPlay. Your sources and listening history sync through iCloud, so you can pick up where you left off.</p>
         </li>
       </ul>
     </section>
 
     <!-- FLAG: Replace the heading, paragraphs, and signature with the essay -->
-    <article id="why" class="scroll-mt-14 border-t border-neutral-200 px-6 py-20" aria-labelledby="essay-heading">
+    <article id="why" class="scroll-mt-14 border-t border-line px-6 py-20" aria-labelledby="essay-heading">
       <div class="mx-auto max-w-prose">
         <h2 id="essay-heading" class="font-display text-3xl font-bold uppercase [font-stretch:75%]">Essay title</h2>
 
-        <div class="mt-8 space-y-6 text-lg leading-relaxed text-neutral-800">
+        <div class="mt-8 space-y-6 text-lg leading-relaxed text-ink/90">
           <p>First paragraph of the essay goes here. Each paragraph gets its own &lt;p&gt; tag, and the spacing between them is handled for you.</p>
           <p>Second paragraph goes here.</p>
           <p>Third paragraph goes here.</p>
@@ -189,7 +189,7 @@
 
         <footer class="mt-12">
           <p class="text-lg font-semibold">Spencer Tweedy</p>
-          <p class="text-neutral-600">Drummer and developer, Chicago</p>
+          <p class="text-muted">Drummer and developer, Chicago</p>
         </footer>
       </div>
     </article>
@@ -206,12 +206,12 @@
 
       <div class="space-y-2">
         <h2 id="cta-heading" class="font-display text-3xl font-bold uppercase [font-stretch:75%]">Start digging</h2>
-        <p class="text-lg text-neutral-700">Join the beta and find your next favorite record.</p>
+        <p class="text-lg text-ink/75">Join the beta and find your next favorite record.</p>
       </div>
 
         <a
           href="https://testflight.apple.com/join/f4y22UjJ"
-          class="inline-flex border-3 border-black/25 items-center gap-2.5 rounded-xl bg-black/70 py-3 pr-5 pl-3 text-white transition hover:bg-neutral-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+          class="inline-flex border-3 border-black/25 items-center gap-2.5 rounded-xl bg-black/70 py-3 pr-5 pl-3 text-white transition hover:bg-neutral-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink dark:border-white/20 dark:bg-black dark:hover:bg-neutral-900"
         >
           <svg class="size-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M12 3v12m0 0-5-5m5 5 5-5M5 20h14"/>
@@ -224,15 +224,15 @@
     </section>
   </main>
 
-  <footer class="border-t border-amber-900/10 bg-cream">
-    <div class="mx-auto flex max-w-5xl flex-col items-center gap-4 px-6 py-8 text-sm text-neutral-600 sm:flex-row sm:justify-between">
+  <footer class="border-t border-line bg-cream">
+    <div class="mx-auto flex max-w-5xl flex-col items-center gap-4 px-6 py-8 text-sm text-muted sm:flex-row sm:justify-between">
       <p>&copy; 2026 Manual Play</p>
 
       <!-- FLAG: Replace hrefs with the privacy policy, support page, and contact address -->
       <ul class="flex flex-wrap justify-center gap-x-6 gap-y-2">
-        <li><a href="#" class="hover:text-black">Privacy Policy</a></li>
-        <li><a href="#" class="hover:text-black">Support</a></li>
-        <li><a href="#" class="hover:text-black">Contact</a></li>
+        <li><a href="#" class="hover:text-ink">Privacy Policy</a></li>
+        <li><a href="#" class="hover:text-ink">Support</a></li>
+        <li><a href="#" class="hover:text-ink">Contact</a></li>
       </ul>
     </div>
   </footer>

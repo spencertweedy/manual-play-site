@@ -1,5 +1,44 @@
 @import "tailwindcss";
 
+/* Fonts, served from public/fonts (paths are relative to public/css/main.css). Both are variable fonts under the SIL
+   Open Font License; the licences sit beside the files. Latin and Latin Extended only, so accented names still render. */
+@font-face {
+  font-family: "Archivo";
+  font-style: normal;
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-display: swap;
+  src: url("../fonts/archivo-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Archivo";
+  font-style: normal;
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-display: swap;
+  src: url("../fonts/archivo-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Bricolage Grotesque";
+  font-style: normal;
+  font-weight: 200 800;
+  font-stretch: 75% 100%;
+  font-display: swap;
+  src: url("../fonts/bricolage-grotesque-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Bricolage Grotesque";
+  font-style: normal;
+  font-weight: 200 800;
+  font-stretch: 75% 100%;
+  font-display: swap;
+  src: url("../fonts/bricolage-grotesque-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
 @theme {
   /* Stands in for San Francisco Condensed, the app's navigation-title font */
   --font-display: "Archivo", ui-sans-serif, system-ui, sans-serif;
@@ -8,7 +47,31 @@
   --font-sans: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
 }
 
-@theme {
-  /* The header's pale yellow: the app icon's amber, mixed with white */
-  --color-cream: color-mix(in oklab, var(--color-amber-400) 20%, white);
+/* Page colours, which follow the system's light or dark appearance. Light is white with the app icon's amber mixed
+   into the cream bands; dark is a midnight blue-black, with slate bands where light has cream. */
+:root {
+  color-scheme: light dark;
+  --paper: #ffffff;
+  --cream: color-mix(in oklab, var(--color-amber-400) 20%, white);
+  --ink: var(--color-neutral-950);
+  --muted: var(--color-neutral-600);
+  --line: rgb(120 53 15 / 0.12);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #0e1116;
+    --cream: #171c25;
+    --ink: #eef1f6;
+    --muted: #9aa4b5;
+    --line: rgb(200 220 255 / 0.1);
+  }
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-cream: var(--cream);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
 }
