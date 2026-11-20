@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme {
+  /* Stands in for San Francisco Condensed, the app's navigation-title font */
+  --font-display: "Archivo", ui-sans-serif, system-ui, sans-serif;
+
+  /* Body text: a grotesque with a bit of quirk. It has no italic, so browsers slant it. */
+  --font-sans: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+}
+
+@theme {
+  /* The header's pale yellow: the app icon's amber, mixed with white */
+  --color-cream: color-mix(in oklab, var(--color-amber-400) 20%, white);
+}
