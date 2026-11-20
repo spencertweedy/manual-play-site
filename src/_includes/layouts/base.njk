@@ -1,0 +1,65 @@
+{#- The frame every page shares: <head>, nav, and footer.
+    Page front matter can set:
+      title         shown in the browser tab as "Title • Manual Play" (the home page sets fullTitle instead)
+      fullTitle     the whole tab title, as is
+      description   for search results and link previews; defaults to the site's
+      socialTitle   the title in link previews; defaults to the tab title
+      bodyClass     extra classes for <body>
+      noindex       true to keep search engines away (the 404 page) -#}
+{%- set docTitle = fullTitle or (title + " • " + site.name) -%}
+{%- set pageDescription = description or site.description -%}
+{%- set previewTitle = socialTitle or docTitle -%}
+<!doctype html>
+<html lang="en-US" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+
+  <!-- LOVE & LOGIC -->
+
+  <title>{{ docTitle }}</title>
+  <meta name="description" content="{{ pageDescription }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="/icon.png">
+
+  <link rel="preload" href="/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/main.css">
+
+  <script src="/js/main.js" defer></script>
+
+  {%- if noindex %}
+  <meta name="robots" content="noindex">
+  {%- else %}
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+
+  <!-- Link previews -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ previewTitle }}">
+  <meta name="twitter:description" content="{{ pageDescription }}">
+  <meta name="twitter:image" content="{{ site.url }}{{ site.socialImage }}">
+  <meta name="twitter:image:alt" content="{{ site.socialImageAlt }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:title" content="{{ previewTitle }}">
+  <meta property="og:description" content="{{ pageDescription }}">
+  <meta property="og:image" content="{{ site.url }}{{ site.socialImage }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="{{ site.socialImageAlt }}">
+  {%- endif %}
+
+  <meta name="theme-color" content="#fff3dc" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#171c25" media="(prefers-color-scheme: dark)">
+</head>
+
+<body class="flex min-h-dvh flex-col bg-paper text-ink {{ bodyClass }}">
+  {% include "nav.njk" %}
+
+  {{ content | safe }}
+
+  {% include "footer.njk" %}
+</body>
+</html>

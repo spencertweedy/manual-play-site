@@ -1,0 +1,16 @@
+<nav class="sticky top-0 z-10 border-b border-line bg-cream/85 backdrop-blur-md" aria-label="Main">
+  <div class="mx-auto flex h-14 max-w-5xl items-center justify-between gap-4 px-6">
+    <a href="/" class="flex items-center gap-2.5"{% if page.url == "/" %} aria-current="page"{% endif %}>
+      <img src="/images/app-icon.png" width="28" height="28" alt="" class="size-7 rounded-[7px]">
+      <span class="font-display text-xl font-bold uppercase [font-stretch:75%]">{{ site.name }}</span>
+    </a>
+
+    <div class="flex items-center gap-5 text-sm font-medium">
+      <a href="/#features" class="hidden text-ink/75 hover:text-ink sm:inline">Features</a>
+      <a href="/#why" class="hidden text-ink/75 hover:text-ink sm:inline">Why</a>
+      {#- FLAG: Replace href with the press kit link #}
+      <a href="#" class="hidden text-ink/75 hover:text-ink sm:inline">Press Kit</a>
+      <a href="{{ site.testflight }}" class="rounded-full bg-black/80 px-4 py-2.5 text-white transition [text-box:trim-both_cap_alphabetic] hover:bg-neutral-800 dark:bg-ink dark:text-paper dark:hover:bg-ink/85">Download Beta</a>
+    </div>
+  </div>
+</nav>

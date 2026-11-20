@@ -1,103 +1,18 @@
-<!doctype html>
-<html lang="en-US" class="scroll-smooth">
-<head>
-  <meta charset="utf-8">
-  
-  <!-- LOVE & LOGIC -->
-
-  <!-- Define page title and description -->
-  <title>Manual Play ➣ Human-powered music discovery</title>
-  <meta name="description" content="Manual Play makes it easy to discover great music from the writers, blogs, and magazines you already love.">
-
-  <!-- Define viewport -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- Link favicon and Apple icon -->
-  <link id="favicon" rel="icon" href="favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" href="icon.png">
-
-  <!-- Import stylesheets -->
-  <link rel="preload" href="fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/main.css">
-
-  <!-- Import the client-side JavaScript -->
-  <script src="js/main.js" defer></script>
-
-  <!-- Social media tags -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Manual Play: Human-powered music discovery">
-  <meta name="twitter:description" content="Manual Play makes it easy to discover great music from the writers, blogs, and magazines you already love.">
-  <meta name="twitter:image" content="https://manualplay.com/images/social.png">
-  <meta name="twitter:image:alt" content="The Manual Play app icon, a black record on yellow, beside the words Manual Play: Human-powered music discovery">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://manualplay.com/">
-  <meta property="og:site_name" content="Manual Play">
-  <meta property="og:title" content="Manual Play: Human-powered music discovery">
-  <meta property="og:description" content="Manual Play makes it easy to discover great music from the writers, blogs, and magazines you already love.">
-  <meta property="og:image" content="https://manualplay.com/images/social.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="The Manual Play app icon, a black record on yellow, beside the words Manual Play: Human-powered music discovery">
-  <link rel="canonical" href="https://manualplay.com/">
-
-  <!-- Define theme color -->
-  <meta name="theme-color" content="#fff3dc" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#171c25" media="(prefers-color-scheme: dark)">
-</head>
-
-<body class="bg-paper text-ink">
-  <nav class="sticky top-0 z-10 border-b border-line bg-cream/85 backdrop-blur-md" aria-label="Main">
-    <div class="mx-auto flex h-14 max-w-5xl items-center justify-between gap-4 px-6">
-      <a href="#" class="flex items-center gap-2.5">
-        <img src="images/app-icon.png" width="28" height="28" alt="" class="size-7 rounded-[7px]">
-        <span class="font-display text-xl font-bold uppercase [font-stretch:75%]">Manual Play</span>
-      </a>
-
-      <div class="flex items-center gap-5 text-sm font-medium">
-        <a href="#features" class="hidden text-ink/75 hover:text-ink sm:inline">Features</a>
-        <a href="#why" class="hidden text-ink/75 hover:text-ink sm:inline">Why</a>
-        <!-- FLAG: Replace href with the press kit link -->
-        <a href="#" class="hidden text-ink/75 hover:text-ink sm:inline">Press Kit</a>
-        <a href="https://testflight.apple.com/join/f4y22UjJ" class="rounded-full bg-black/80 px-4 py-2.5 text-white transition [text-box:trim-both_cap_alphabetic] hover:bg-neutral-800 dark:bg-ink dark:text-paper dark:hover:bg-ink/85">Download Beta</a>
-      </div>
-    </div>
-  </nav>
+---
+layout: layouts/base.njk
+fullTitle: "Manual Play ➣ Human-powered music discovery"
+socialTitle: "Manual Play: Human-powered music discovery"
+---
   <header class="flex flex-col items-center gap-6 p-16 bg-cream">
-    <!-- The icon's yellow behind a copy of the icon cropped to the disc, so only the disc turns -->
-    <button
-      type="button"
-      id="spin-disc"
-      aria-label="Spin the record"
-      class="size-[180px] cursor-pointer overflow-hidden rounded-[40px] bg-[#f5c518] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
-    >
-      <img
-        src="images/app-icon.png"
-        srcset="images/app-icon.png 1x, images/app-icon@2x.png 2x"
-        width="180"
-        height="180"
-        alt=""
-        class="size-full [clip-path:circle(40%)]"
-      >
-    </button>
+    {% set discSize = 180 %}{% set discClass = "size-[180px] rounded-[40px]" %}
+    {% include "spin-disc.njk" %}
     
     <div class="text-center space-y-2">
-      <h1 class="font-display text-4xl font-bold uppercase [font-stretch:75%]">Manual Play</h1>
-      <p class="font-light text-xl">Human-powered music discovery</p>
+      <h1 class="font-display text-4xl font-bold uppercase [font-stretch:75%]">{{ site.name }}</h1>
+      <p class="font-light text-xl">{{ site.tagline }}</p>
     </div>
     
-    <a
-      href="https://testflight.apple.com/join/f4y22UjJ"
-      class="inline-flex border-3 border-black/25 items-center gap-2.5 rounded-xl bg-black/70 py-3 pr-5 pl-3 text-white transition hover:bg-neutral-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink dark:border-white/20 dark:bg-black dark:hover:bg-neutral-900"
-    >
-      <svg class="size-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M12 3v12m0 0-5-5m5 5 5-5M5 20h14"/>
-      </svg>
-      <span class="flex flex-col gap-0.5 text-left">
-        <span class="text-[11px] leading-none font-medium">Download on</span>
-        <span class="text-lg leading-none font-semibold tracking-tight">TestFlight</span>
-      </span>
-    </a>
+    {% include "testflight-badge.njk" %}
   </header>
 
   <main>
@@ -111,7 +26,7 @@
     </section>
 
     <!-- FLAG: Replace each placeholder <div> with an <img> of a screenshot, e.g.
-         <img src="images/screenshots/releases.png" width="1290" height="2796" alt="…" class="w-full rounded-[2.25rem] border border-line"> -->
+         <img src="/images/screenshots/releases.png" width="1290" height="2796" alt="…" class="w-full rounded-[2.25rem] border border-line"> -->
     <section id="screenshots" class="scroll-mt-14 pt-16" aria-label="Screenshots">
       <!-- Scrolls sideways; the padding lines the first screenshot up with the page content above -->
       <ul
@@ -218,15 +133,11 @@
       </ul>
     </section>
 
-    <!-- FLAG: Replace the heading, paragraphs, and signature with the essay -->
-    <article id="why" class="scroll-mt-14 border-t border-line px-6 py-20" aria-labelledby="essay-heading">
+    <!-- The essay itself is in src/_includes/essay.md -->
+    <article id="why" class="scroll-mt-14 border-t border-line px-6 py-20" aria-label="Why I made Manual Play">
       <div class="mx-auto max-w-prose">
-        <h2 id="essay-heading" class="font-display text-3xl font-bold uppercase [font-stretch:75%]">Essay title</h2>
-
-        <div class="mt-8 space-y-6 text-lg leading-relaxed text-ink/90">
-          <p>First paragraph of the essay goes here. Each paragraph gets its own &lt;p&gt; tag, and the spacing between them is handled for you.</p>
-          <p>Second paragraph goes here.</p>
-          <p>Third paragraph goes here.</p>
+        <div class="copy [&>h2:first-child]:mt-0 [&>h2:first-child]:mb-8 [&>h2:first-child]:text-3xl">
+          {% renderFile "./src/_includes/essay.md" %}
         </div>
 
         <footer class="mt-12">
@@ -238,8 +149,8 @@
 
     <section class="flex flex-col items-center gap-6 bg-cream px-6 py-20 text-center" aria-labelledby="cta-heading">
       <img
-        src="images/app-icon.png"
-        srcset="images/app-icon.png 1x, images/app-icon@2x.png 2x"
+        src="/images/app-icon.png"
+        srcset="/images/app-icon.png 1x, /images/app-icon@2x.png 2x"
         width="96"
         height="96"
         alt=""
@@ -251,31 +162,6 @@
         <p class="text-lg text-ink/75">It’s free, no account required.</p>
       </div>
 
-        <a
-          href="https://testflight.apple.com/join/f4y22UjJ"
-          class="inline-flex border-3 border-black/25 items-center gap-2.5 rounded-xl bg-black/70 py-3 pr-5 pl-3 text-white transition hover:bg-neutral-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink dark:border-white/20 dark:bg-black dark:hover:bg-neutral-900"
-        >
-          <svg class="size-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M12 3v12m0 0-5-5m5 5 5-5M5 20h14"/>
-          </svg>
-          <span class="flex flex-col gap-0.5 text-left">
-            <span class="text-[11px] leading-none font-medium">Download on</span>
-            <span class="text-lg leading-none font-semibold tracking-tight">TestFlight</span>
-          </span>
-        </a>
+    {% include "testflight-badge.njk" %}
     </section>
   </main>
-
-  <footer class="border-t border-line bg-cream">
-    <div class="mx-auto flex max-w-5xl flex-col items-center gap-4 px-6 py-8 text-sm text-muted sm:flex-row sm:justify-between">
-      <p>&copy; 2026 Manual Play</p>
-
-      <ul class="flex flex-wrap justify-center gap-x-6 gap-y-2">
-        <li><a href="privacy/" class="hover:text-ink">Privacy Policy</a></li>
-        <li><a href="support/" class="hover:text-ink">Support</a></li>
-        <li><a href="mailto:me@spencertweedy.com?subject=Message%20about%20Manual%20Play" class="hover:text-ink">Contact</a></li>
-      </ul>
-    </div>
-  </footer>
-</body>
-</html>

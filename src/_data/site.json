@@ -1,0 +1,10 @@
+{
+  "name": "Manual Play",
+  "tagline": "Human-powered music discovery",
+  "url": "https://manualplay.com",
+  "description": "Manual Play makes it easy to discover great music from the writers, blogs, and magazines you already love.",
+  "testflight": "https://testflight.apple.com/join/f4y22UjJ",
+  "email": "me@spencertweedy.com",
+  "socialImage": "/images/social.png",
+  "socialImageAlt": "The Manual Play app icon, a black record on yellow, beside the words Manual Play: Human-powered music discovery"
+}

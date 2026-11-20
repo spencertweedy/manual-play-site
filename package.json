@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "tailwindcss -i ./src/input.css -o ./public/css/main.css --watch",
-    "build": "tailwindcss -i ./src/input.css -o ./public/css/main.css --minify"
+    "dev": "run-p dev:*",
+    "build": "eleventy && tailwindcss -i ./src/styles.css -o ./_site/css/main.css --minify",
+    "dev:11ty": "eleventy --serve",
+    "dev:css": "tailwindcss -i ./src/styles.css -o ./_site/css/main.css --watch=always"
   },
   "repository": {
     "type": "git",
@@ -13,13 +15,15 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/spencertweedy/manual-play-site/issues"
   },
   "homepage": "https://github.com/spencertweedy/manual-play-site#readme",
   "devDependencies": {
+    "@11ty/eleventy": "^3.1.8",
     "@tailwindcss/cli": "^4.3.5",
+    "npm-run-all2": "^8.0.4",
     "tailwindcss": "^4.3.5"
   }
 }

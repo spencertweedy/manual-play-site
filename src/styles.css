@@ -75,3 +75,37 @@
   --color-muted: var(--muted);
   --color-line: var(--line);
 }
+
+/* Long-form writing from Markdown (the essay, privacy policy, and support page). Markdown can't carry classes, so the
+   styles hang off the wrapper instead. Links with a class of their own, like buttons, keep their own look. */
+@layer components {
+  .copy {
+    @apply text-lg leading-relaxed text-ink/90;
+
+    & > * + * {
+      @apply mt-5;
+    }
+    & h2 {
+      @apply mt-12 mb-4 font-display text-2xl font-bold text-ink uppercase;
+      font-stretch: 75%;
+    }
+    & h3 {
+      @apply mt-8 font-semibold text-ink;
+    }
+    & h3 + p {
+      @apply mt-2;
+    }
+    & strong {
+      @apply font-semibold text-ink;
+    }
+    & ul {
+      @apply list-disc pl-6;
+    }
+    & li + li {
+      @apply mt-2;
+    }
+    & a:not([class]) {
+      @apply underline decoration-amber-400 decoration-2 underline-offset-4 hover:decoration-ink;
+    }
+  }
+}

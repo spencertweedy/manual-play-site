@@ -1,0 +1,18 @@
+{#- The app icon, with a disc that spins when clicked (see public/js/main.js): the icon's yellow behind a copy of the
+    icon cropped to the disc, so only the disc turns. Set discSize (in pixels) and discClass before including; discClass
+    holds the size and corner-radius classes, written out in full so Tailwind can find them. -#}
+<button
+  type="button"
+  id="spin-disc"
+  aria-label="Spin the record"
+  class="{{ discClass }} cursor-pointer overflow-hidden bg-[#f5c518] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
+>
+  <img
+    src="/images/app-icon.png"
+    srcset="/images/app-icon.png 1x, /images/app-icon@2x.png 2x"
+    width="{{ discSize }}"
+    height="{{ discSize }}"
+    alt=""
+    class="size-full [clip-path:circle(40%)]"
+  >
+</button>
