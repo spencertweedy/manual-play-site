@@ -47,10 +47,12 @@
   --font-sans: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
 }
 
-/* Page colours, which follow the system's light or dark appearance: white in light mode, a midnight blue-black in dark. */
+/* Page colours, which follow the system's light or dark appearance: white in light mode, a midnight blue-black in dark.
+   Shade is for a band set off from the page, like the note from the developer: light grey, or a lighter slate. */
 :root {
   color-scheme: light dark;
   --paper: #ffffff;
+  --shade: var(--color-neutral-100);
   --ink: var(--color-neutral-950);
   --muted: var(--color-neutral-600);
   --line: rgb(120 53 15 / 0.12);
@@ -59,6 +61,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --paper: #0e1116;
+    --shade: #171c25;
     --ink: #eef1f6;
     --muted: #9aa4b5;
     --line: rgb(200 220 255 / 0.1);
@@ -67,12 +70,13 @@
 
 @theme inline {
   --color-paper: var(--paper);
+  --color-shade: var(--shade);
   --color-ink: var(--ink);
   --color-muted: var(--muted);
   --color-line: var(--line);
 }
 
-/* Long-form writing from Markdown (the essay, privacy policy, and support page). Markdown can't carry classes, so the
+/* Long-form writing from Markdown (the privacy policy and support page). Markdown can't carry classes, so the
    styles hang off the wrapper instead. Links with a class of their own, like buttons, keep their own look. */
 @layer components {
   .copy {

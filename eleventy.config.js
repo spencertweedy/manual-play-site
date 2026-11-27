@@ -1,14 +1,15 @@
-import { EleventyRenderPlugin } from "@11ty/eleventy";
-
 export default function (eleventyConfig) {
   // Static files (images, fonts, scripts, icons) are copied to the site's root as they are.
   eleventyConfig.addPassthroughCopy({ public: "/" });
 
-  // Lets the home page pull in the essay, which is written in Markdown.
-  eleventyConfig.addPlugin(EleventyRenderPlugin);
-
   // Tailwind writes the stylesheet straight into the output folder; reload the browser when it does.
   eleventyConfig.setServerOptions({ watch: ["_site/css/**/*.css"] });
+
+  // The app's name set like its logo: bold, condensed capitals.
+  eleventyConfig.addShortcode(
+    "wordmark",
+    () => `<strong class="font-display font-bold uppercase [font-stretch:75%]">Manual Play</strong>`
+  );
 
   // The current year, for the footer.
   eleventyConfig.addShortcode("year", () => String(new Date().getFullYear()));

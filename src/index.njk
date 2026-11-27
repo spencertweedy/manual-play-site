@@ -13,9 +13,10 @@ ownHeader: true
       {% include "nav-links.njk" %}
     </div>
 
-    <h1 class="mt-10 max-w-2xl text-2xl leading-snug font-light text-pretty sm:text-3xl">
-      <strong class="font-display font-bold uppercase [font-stretch:75%]">{{ site.name }}</strong> is a reader for new music. Subscribe to the blogs, websites, and newsletters you trust, and Manual Play turns their posts into a feed of releases that you can play with a single tap.
-    </h1>
+    <div class="mt-10 max-w-2xl space-y-4 text-2xl leading-snug font-light text-pretty sm:text-3xl">
+      <h1>{% wordmark %} is a reader for new music.</h1>
+      <p>Subscribe to the blogs, websites, and newsletters you trust, and {% wordmark %} turns their posts into a feed of releases that you can play with a single tap.</p>
+    </div>
 
     <div class="mt-8">
       {% include "app-store-badge.njk" %}
@@ -30,9 +31,35 @@ ownHeader: true
     {% include "screenshots-carousel.njk" %}
   </section>
 
+  {#- A note from the developer, set like a letter: the photo, the greeting, then the note in one column. The photo is
+      the one in the app's welcome screen, by Steve Sym. #}
+  <section id="about" class="mt-16 bg-shade py-16 sm:mt-24 sm:py-20" aria-label="About the developer">
+    <div class="mx-auto max-w-5xl px-6">
+      <div class="max-w-2xl space-y-5 text-lg leading-relaxed text-ink/90">
+        <img
+          src="/images/spencer.jpg"
+          width="1080"
+          height="720"
+          alt="Spencer playing drums on stage"
+          loading="lazy"
+          class="mb-10 w-full max-w-lg rounded-2xl"
+        >
+        <p class="text-2xl leading-snug font-light text-ink sm:text-3xl">
+          Hi, I’m <a href="https://spencertweedy.com/" target="_blank" rel="noopener" class="underline decoration-amber-400 decoration-2 underline-offset-4 hover:decoration-ink">Spencer</a>.
+        </p>
+        <p>I created {% wordmark %} because I wanted a more focused, fun, and humane way to discover new music. Streaming services are convenient, but they’re also bloated, and I hate the power they have over what we do and don’t hear.</p>
+        <p>Luckily, the open web is alive. And music journalists&#8288;—people whose lives are built around listening to and contemplating music—are still publishing.</p>
+        <p>{% wordmark %} is an effort to bring some attention back to the ecosystem of real people who write about music, with all the convenience of a streaming app.</p>
+        <p>It’s not a direct attack on Goliath, but a side door into his house, so we can enjoy the things he hid in the cellar.</p>
+        <p>I hope you find some music you love.</p>
+        <p>—Spencer</p>
+      </div>
+    </div>
+  </section>
+
   <div class="mx-auto mt-16 max-w-5xl px-6 sm:mt-20">
     <p class="max-w-2xl text-2xl leading-snug font-light text-pretty sm:text-3xl">
-      <strong class="font-display font-bold uppercase [font-stretch:75%]">{{ site.name }}</strong> is free and donation-supported.
+      {% wordmark %} is free and donation-supported.
     </p>
 
     <div class="mt-5">
