@@ -5,7 +5,8 @@
       description   for search results and link previews; defaults to the site's
       socialTitle   the title in link previews; defaults to the tab title
       bodyClass     extra classes for <body>
-      noindex       true to keep search engines away (the 404 page) -#}
+      noindex       true to keep search engines away (the 404 page)
+      ownHeader     true to leave out the shared header, for a page that has its own (the home page) -#}
 {%- set docTitle = fullTitle or (title + " • " + site.name) -%}
 {%- set pageDescription = description or site.description -%}
 {%- set previewTitle = socialTitle or docTitle -%}
@@ -51,12 +52,14 @@
   <meta property="og:image:alt" content="{{ site.socialImageAlt }}">
   {%- endif %}
 
-  <meta name="theme-color" content="#fff3dc" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#171c25" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0e1116" media="(prefers-color-scheme: dark)">
 </head>
 
 <body class="flex min-h-dvh flex-col bg-paper text-ink {{ bodyClass }}">
+  {%- if not ownHeader %}
   {% include "nav.njk" %}
+  {%- endif %}
 
   {{ content | safe }}
 

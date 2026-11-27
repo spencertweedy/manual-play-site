@@ -3,8 +3,8 @@ layout: layouts/base.njk
 ---
 {#- A page of writing, such as the privacy policy, with its title as a heading and its Markdown styled by .copy.
     Front matter can set "updated" to show a "Last updated" date under the title. #}
-<main class="flex-1 px-6 py-16">
-  <article class="mx-auto max-w-prose text-lg">
+<main class="mx-auto w-full max-w-5xl flex-1 px-6 pt-16 pb-20">
+  <article class="max-w-prose text-lg">
     <h1 class="font-display text-4xl font-bold uppercase [font-stretch:75%]">{{ title }}</h1>
     {%- if updated %}
     <p class="mt-2 text-base text-muted">Last updated {{ updated }}</p>

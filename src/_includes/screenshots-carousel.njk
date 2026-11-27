@@ -1,0 +1,24 @@
+{#- The sideways-scrolling strip of screenshots. Its padding lines the first screenshot up with page content in a
+    max-w-5xl column with px-6 gutters. The screenshots carry their own headlines, so each headline doubles as the alt
+    text and there are no captions. -#}
+<ul
+  tabindex="0"
+  aria-label="Screenshots, scroll sideways for more"
+  class="flex snap-x snap-mandatory gap-6 overflow-x-auto px-[max(1.5rem,calc((100%_-_64rem)/2_+_1.5rem))] pb-4 scroll-px-[max(1.5rem,calc((100%_-_64rem)/2_+_1.5rem))] focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ink"
+>
+  <li class="w-56 shrink-0 snap-start sm:w-64">
+    <img src="/images/screenshots/subscribe.jpg" width="800" height="1738" alt="Subscribe to music blogs and websites." class="w-full rounded-[2.25rem]">
+  </li>
+  <li class="w-56 shrink-0 snap-start sm:w-64">
+    <img src="/images/screenshots/discover.jpg" width="800" height="1738" alt="Discover music without algorithms." class="w-full rounded-[2.25rem]">
+  </li>
+  <li class="w-56 shrink-0 snap-start sm:w-64">
+    <img src="/images/screenshots/listen.jpg" width="800" height="1738" alt="Listen to what they write about." class="w-full rounded-[2.25rem]">
+  </li>
+  <li class="w-56 shrink-0 snap-start sm:w-64">
+    <img src="/images/screenshots/credits.jpg" width="800" height="1738" alt="Explore credits, follow rabbit holes." loading="lazy" class="w-full rounded-[2.25rem]">
+  </li>
+  <li class="w-56 shrink-0 snap-start sm:w-64">
+    <img src="/images/screenshots/services.jpg" width="800" height="1738" alt="Choose your preferred service." loading="lazy" class="w-full rounded-[2.25rem]">
+  </li>
+</ul>

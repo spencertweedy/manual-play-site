@@ -1,0 +1,12 @@
+{#- Apple's official "Download on the App Store" badge, unaltered: black on light pages, white in dark mode.
+    Until the app is live it links to the TestFlight beta; set appStore in src/_data/site.json and it links there instead.
+    Apple asks that the badge be at least 40px tall on screen and have clear space around it. -#}
+<a
+  href="{{ site.appStore or site.testflight }}"
+  class="inline-block rounded-[9px] transition hover:opacity-85 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
+>
+  <picture>
+    <source srcset="/images/app-store-badge-white.svg" media="(prefers-color-scheme: dark)">
+    <img src="/images/app-store-badge-black.svg" width="168" height="56" alt="Download on the App Store" class="h-14 w-auto">
+  </picture>
+</a>

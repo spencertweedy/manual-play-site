@@ -2,147 +2,42 @@
 layout: layouts/base.njk
 fullTitle: "Manual Play ➣ Human-powered music discovery"
 socialTitle: "Manual Play: Human-powered music discovery"
+ownHeader: true
 ---
-  <header class="flex flex-col items-center gap-6 p-16 bg-cream">
-    {% set discSize = 180 %}{% set discClass = "size-[180px] rounded-[40px]" %}
-    {% include "spin-disc.njk" %}
-    
-    <div class="text-center space-y-2">
-      <h1 class="font-display text-4xl font-bold uppercase [font-stretch:75%]">{{ site.name }}</h1>
-      <p class="font-light text-xl">{{ site.tagline }}</p>
+<main class="flex-1 pt-16 pb-20 sm:pt-24">
+  <header class="mx-auto max-w-5xl px-6">
+    <div class="flex items-start justify-between gap-6">
+      {% set discSize = 96 %}{% set discClass = "size-24 rounded-[22px]" %}
+      {% include "spin-disc.njk" %}
+
+      {% include "nav-links.njk" %}
     </div>
-    
-    {% include "testflight-badge.njk" %}
+
+    <h1 class="mt-10 max-w-2xl text-2xl leading-snug font-light text-pretty sm:text-3xl">
+      <strong class="font-display font-bold uppercase [font-stretch:75%]">{{ site.name }}</strong> is a reader for new music. Subscribe to the blogs, websites, and newsletters you trust, and Manual Play turns their posts into a feed of releases that you can play with a single tap.
+    </h1>
+
+    <div class="mt-8">
+      {% include "app-store-badge.njk" %}
+    </div>
   </header>
 
-  <main>
-    <section class="mx-auto max-w-2xl px-6 pt-20 text-center" aria-label="Introduction">
-      <p class="text-2xl leading-snug font-light text-balance sm:text-3xl">
-        Manual Play makes it easy to discover great music from the writers, blogs, and magazines you already love.
-      </p>
-    </section>
+  <section id="features" class="mx-auto mt-16 max-w-5xl px-6 sm:mt-20" aria-label="Features">
+    {% include "features-grid.njk" %}
+  </section>
 
-    <!-- The screenshots carry their own headlines, so each headline doubles as the alt text and there are no captions -->
-    <section id="screenshots" class="scroll-mt-14 pt-16" aria-label="Screenshots">
-      <!-- Scrolls sideways; the padding lines the first screenshot up with the page content above -->
-      <ul
-        tabindex="0"
-        aria-label="Screenshots, scroll sideways for more"
-        class="flex snap-x snap-mandatory gap-6 overflow-x-auto px-[max(1.5rem,calc((100%_-_64rem)/2_+_1.5rem))] pb-4 scroll-px-[max(1.5rem,calc((100%_-_64rem)/2_+_1.5rem))] focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ink"
-      >
-        <li class="w-56 shrink-0 snap-start sm:w-64">
-          <img src="/images/screenshots/subscribe.jpg" width="800" height="1738" alt="Subscribe to music blogs and websites." class="w-full rounded-[2.25rem]">
-        </li>
-        <li class="w-56 shrink-0 snap-start sm:w-64">
-          <img src="/images/screenshots/discover.jpg" width="800" height="1738" alt="Discover music without algorithms." class="w-full rounded-[2.25rem]">
-        </li>
-        <li class="w-56 shrink-0 snap-start sm:w-64">
-          <img src="/images/screenshots/listen.jpg" width="800" height="1738" alt="Listen to what they write about." class="w-full rounded-[2.25rem]">
-        </li>
-        <li class="w-56 shrink-0 snap-start sm:w-64">
-          <img src="/images/screenshots/credits.jpg" width="800" height="1738" alt="Explore credits, follow rabbit holes." loading="lazy" class="w-full rounded-[2.25rem]">
-        </li>
-        <li class="w-56 shrink-0 snap-start sm:w-64">
-          <img src="/images/screenshots/services.jpg" width="800" height="1738" alt="Choose your preferred service." loading="lazy" class="w-full rounded-[2.25rem]">
-        </li>
-      </ul>
-    </section>
+  <section class="mt-16 sm:mt-20" aria-label="Screenshots">
+    {% include "screenshots-carousel.njk" %}
+  </section>
 
-    <section id="features" class="mx-auto max-w-5xl scroll-mt-14 px-6 py-20" aria-labelledby="features-heading">
-      <h2 id="features-heading" class="text-center font-display text-3xl font-bold uppercase [font-stretch:75%]">Features</h2>
+  <div class="mx-auto mt-16 max-w-5xl px-6 sm:mt-20">
+    <p class="max-w-2xl text-2xl leading-snug font-light text-pretty sm:text-3xl">
+      <strong class="font-display font-bold uppercase [font-stretch:75%]">{{ site.name }}</strong> is free and donation-supported.
+    </p>
 
-      <ul class="mt-12 grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-        <li>
-          <div class="flex size-12 items-center justify-center rounded-xl bg-amber-400 text-neutral-900">
-            <svg class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/>
-            </svg>
-          </div>
-          <h3 class="mt-4 text-lg font-semibold">Built on RSS</h3>
-          <p class="mt-2 text-muted">The old web is alive, baby. Pitchfork, Stereogum, almost any music site—they all publish via RSS, and Manual Play can read their posts.</p>
-        </li>
+    <div class="mt-5">
+      {% include "app-store-badge.njk" %}
+    </div>
+  </div>
+</main>
 
-        <li>
-          <div class="flex size-12 items-center justify-center rounded-xl bg-amber-400 text-neutral-900">
-            <svg class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 17v4M17 19h4"/>
-            </svg>
-          </div>
-          <h3 class="mt-4 text-lg font-semibold">One tap to listen</h3>
-          <p class="mt-2 text-muted">Manual Play magically detects the music releases your sources write about, and lets you listen to them instantly.</p>
-        </li>
-
-        <li>
-          <div class="flex size-12 items-center justify-center rounded-xl bg-amber-400 text-neutral-900">
-            <svg class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="12" cy="12" r="10"/><path d="M10 8l6 4-6 4z"/>
-            </svg>
-          </div>
-          <h3 class="mt-4 text-lg font-semibold">Browse with any service</h3>
-          <p class="mt-2 text-muted">Apple Music is required for in-app playback, but users of any platform can browse in Manual Play and open releases in the app they choose.</p>
-        </li>
-
-        <li>
-          <div class="flex size-12 items-center justify-center rounded-xl bg-amber-400 text-neutral-900">
-            <svg class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.5 14a6.5 6.5 0 0 1 3 6"/>
-            </svg>
-          </div>
-          <h3 class="mt-4 text-lg font-semibold">Read the credits, follow rabbit holes</h3>
-          <p class="mt-2 text-muted">Why do streaming services bury this information? Manual Play puts it front-and-center. Learn about the people who created the music you love.</p>
-        </li>
-
-        <li>
-          <div class="flex size-12 items-center justify-center rounded-xl bg-amber-400 text-neutral-900">
-            <svg class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="2" y="4" width="12" height="10" rx="1.5"/><path d="M1 18h14"/><rect x="16" y="8" width="6" height="12" rx="1.5"/>
-            </svg>
-          </div>
-          <h3 class="mt-4 text-lg font-semibold">Everywhere you listen</h3>
-          <p class="mt-2 text-muted">On iPhone, Mac, Apple Watch, and CarPlay. Your sources and listening history sync through iCloud, so you can pick up where you left off.</p>
-        </li>
-
-        <li>
-          <div class="flex size-12 items-center justify-center rounded-xl bg-amber-400 text-neutral-900">
-            <svg class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="12" cy="12" r="10"/><path d="M4.9 4.9l14.2 14.2"/>
-            </svg>
-          </div>
-          <h3 class="mt-4 text-lg font-semibold">Keep it simple, stupid</h3>
-          <p class="mt-2 text-muted">I’m absolutely tired of subscriptions. I’m tired of likes. I’m tired of “tailored” mixes. Manual Play is just a list of music, drawn from the writers you choose.</p>
-        </li>
-      </ul>
-    </section>
-
-    <!-- The essay itself is in src/_includes/essay.md -->
-    <article id="why" class="hidden scroll-mt-14 border-t border-line px-6 py-20" aria-label="Why I made Manual Play">
-      <div class="mx-auto max-w-prose">
-        <div class="copy [&>h2:first-child]:mt-0 [&>h2:first-child]:mb-8 [&>h2:first-child]:text-3xl">
-          {% renderFile "./src/_includes/essay.md" %}
-        </div>
-
-        <footer class="mt-12">
-          <p class="text-lg font-semibold">Spencer Tweedy</p>
-          <p class="text-muted">Drummer and developer, Chicago</p>
-        </footer>
-      </div>
-    </article>
-
-    <section class="flex flex-col items-center gap-6 bg-cream px-6 py-20 text-center" aria-labelledby="cta-heading">
-      <img
-        src="/images/app-icon.png"
-        srcset="/images/app-icon.png 1x, /images/app-icon@2x.png 2x"
-        width="96"
-        height="96"
-        alt=""
-        class="size-24 rounded-[22px]"
-      >
-
-      <div class="space-y-2">
-        <h2 id="cta-heading" class="font-display text-3xl font-bold uppercase [font-stretch:75%]">Start digging</h2>
-        <p class="text-lg text-ink/75">It’s free, no account required.</p>
-      </div>
-
-    {% include "testflight-badge.njk" %}
-    </section>
-  </main>

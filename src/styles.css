@@ -47,12 +47,10 @@
   --font-sans: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
 }
 
-/* Page colours, which follow the system's light or dark appearance. Light is white with the app icon's amber mixed
-   into the cream bands; dark is a midnight blue-black, with slate bands where light has cream. */
+/* Page colours, which follow the system's light or dark appearance: white in light mode, a midnight blue-black in dark. */
 :root {
   color-scheme: light dark;
   --paper: #ffffff;
-  --cream: color-mix(in oklab, var(--color-amber-400) 20%, white);
   --ink: var(--color-neutral-950);
   --muted: var(--color-neutral-600);
   --line: rgb(120 53 15 / 0.12);
@@ -61,7 +59,6 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --paper: #0e1116;
-    --cream: #171c25;
     --ink: #eef1f6;
     --muted: #9aa4b5;
     --line: rgb(200 220 255 / 0.1);
@@ -70,7 +67,6 @@
 
 @theme inline {
   --color-paper: var(--paper);
-  --color-cream: var(--cream);
   --color-ink: var(--ink);
   --color-muted: var(--muted);
   --color-line: var(--line);

@@ -3,14 +3,11 @@
   { label: "Support", href: "/support/" },
   { label: "Contact", href: "mailto:" + site.email + "?subject=Message%20about%20Manual%20Play" }
 ] -%}
-<footer class="border-t border-line bg-cream">
-  <div class="mx-auto flex max-w-5xl flex-col items-center gap-4 px-6 py-8 text-sm text-muted sm:flex-row sm:justify-between">
-    <p>&copy; {% year %} {{ site.name }}</p>
-
-    <ul class="flex flex-wrap justify-center gap-x-6 gap-y-2">
-      {%- for link in footerLinks %}
-      <li><a href="{{ link.href }}" class="hover:text-ink"{% if page.url == link.href %} aria-current="page"{% endif %}>{{ link.label }}</a></li>
-      {%- endfor %}
-    </ul>
-  </div>
+<footer class="mx-auto w-full max-w-5xl px-6 pb-10 text-sm text-muted">
+  <ul class="flex flex-wrap gap-x-6 gap-y-2">
+    <li>&copy; {% year %} {{ site.name }}</li>
+    {%- for link in footerLinks %}
+    <li><a href="{{ link.href }}" class="hover:text-ink"{% if page.url == link.href %} aria-current="page"{% endif %}>{{ link.label }}</a></li>
+    {%- endfor %}
+  </ul>
 </footer>
